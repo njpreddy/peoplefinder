@@ -31,4 +31,6 @@ Peoplefinder::Engine.routes.draw do
   get '/groups/:id', to: redirect('/teams/%{id}')
   get '/groups/:id/edit', to: redirect('/teams/%{id}/edit')
   get '/groups/:id/people', to: redirect('/teams/%{id}/people')
+
+  get '/test', to: 'new_layout#test'
 end
