@@ -1,0 +1,7 @@
+- content_for :head do
+  = stylesheet_link_tag "new_layout"
+
+- content_for :content do
+  = yield
+
+= render template: "layouts/govuk_template"
