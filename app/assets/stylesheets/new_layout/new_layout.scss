@@ -3,6 +3,9 @@
 @import "measurements";
 @import "typography";
 
+// Global modules //////////////////////////////
+
+// Logged in user name, log out control
 .user-controls {
   text-align: right;
   padding: $gutter-half 0;
@@ -17,12 +20,41 @@
   }
 }
 
-// user photos
+// global breadcumbs
+.breadcrumbs {
+  padding: $gutter-half 0;
+  border-bottom: 1px solid $grey-2;
 
+  @include core-16;
+
+  ol, li {
+    list-style: none;
+  }
+
+  li {
+    display: inline-block;
+    background-image: url(https://assets.digital.cabinet-office.gov.uk/static/separator-73822610794bc3a64871f144d93d6526.png);
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    margin: 0 0.5em 0 0;
+    padding: 0 1em 0 0;
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 20 / 10), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+      background-image: url(https://assets.digital.cabinet-office.gov.uk/static/separator-2x-2ff66846b80b66edba8ce56d29daa935.png);
+      background-size: 6px 11px;
+    }
+
+    &:last-child {
+      background: none;
+    }
+  }
+}
+
+// user photos //////////////////////////////
 // 1. Create / edit profile
+
 .mugshot {
   margin-bottom: $gutter-half;
-
   .preview {
     display: block;
     width: 200px;
@@ -30,7 +62,7 @@
   } 
 }
 
-// further form styles
+// additional form styles //////////////////////////////
 
 .form-button-group {
   margin: $gutter 0; 
@@ -40,7 +72,7 @@ input.file {
   @include core-16;
 }
 
-// utility styles
+// utility styles //////////////////////////////
 
 .collapse-top {
   margin-top: 0;
@@ -50,7 +82,7 @@ input.file {
   @extend %clear-floats;
 }
 
-// dummy org browser area
+// dummy org browser area //////////////////////////////
 
 .dummy-org {
   display: block;
