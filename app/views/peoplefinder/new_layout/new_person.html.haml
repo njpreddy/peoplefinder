@@ -1,13 +1,12 @@
 .user-controls
-  %span
+  %span.user-name
     Signed in as Mat Johnson
   %a{ href:'#' }
     Sign out
 
-%h1.heading-xlarge Create your profile
-/ %h1.heading-xlarge Update your profile
+%h1.heading-large Create your profile
 
-%form
+%form.form{ action:'#', enctype:'multipart/form-data', method:'post' }
   %fieldset
     %legend.visuallyhidden Your name
     .form-group
@@ -18,90 +17,113 @@
       %input.form-control{ type:'text' }
 
   %fieldset
-    %legend.heading-large Your roles
-
-    .form-group
-      %label.form-label Job title
-      %input.form-control{ type:'text' }
-    .form-group
-      .label Team
-      .dummy-org DUMMY ORG
-    .form-group
-      %label.block-label
-        I am the leader of this team
-        %input{ type:'checkbox' }
-
-      %p.form-hint Note that more than one person can be assigned as leader of a team.
-    %details
-      %summary I can’t find my team
-      If the team cannot be found you will need to add it first before you can assign a person to it. This can be done from the page the new team would be located within.
-    .role-controls
-      %a{ href:'#' } Delete this role
-      %a{ href:'#' } Add another role
-
-  %fieldset
-    %legend.heading-large Contact details
-    .form-group
-      %label.form-label
-        Location of work
-        %span.form-hint For example, Room 3, Bristol Crown Court
-      %input.form-control{ type:'text' }
+    %legend.heading-medium Your contact details
     .form-group
       %label.form-label Primary phone number
       %input.form-control{ type:'tel' }
     .form-group
-      %label.form-label Any other phone number
+      %label.form-label Secondary phone number
       %input.form-control{ type:'tel' }
+    .form-group
       %label.form-checkbox
         %input{ type:'checkbox' }
-        I have no contact phone number
+        I don’t have a phone number
+
+  %fieldset.roles
+    %legend.heading-medium Your roles
+
+    .panel-indent.collapse-top
+      .form-group
+        %label.form-label Role title
+        %input.form-control{ type:'text' }
+      .form-group
+        .label Team
+        .dummy-org DUMMY ORG BROWSER
+        %label.block-label
+          I am a leader of this team
+          %input{ type:'checkbox' }
+      %details
+        %summary Why can’t I find my team?
+        .text If the team cannot be found you will need to add it first before you can assign a person to it. This can be done from the page the new team would be located within.
+
+    / a subsequent panel added
+    .panel-indent
+      .form-group
+        %label.form-label Role title
+        %input.form-control{ type:'text' }
+      .form-group
+        .label Team
+        .dummy-org DUMMY ORG BROWSER
+        %label.block-label
+          I am a leader of this team
+          %input{ type:'checkbox' }
+      %p
+        %a{ href:'#' } Delete this role
+
+    .form-group
+      %a{ href:'#' } Add another role
+
+  %fieldset
+    %legend.visuallyhidden Your location
+    .form-group
+      %label.form-label-bold
+        Where do you usually work?
+        %span.form-hint For example, “Room 3, Bristol Crown Court”
+      %input.form-control{ type:'text' }
 
   %fieldset.form-group
-    %legend.heading-large Working days
-    .inline
-      %label.block-label
-        Monday
-        %input{ type:'checkbox', checked:'checked' }
-      %label.block-label
-        Tuesday
-        %input{ type:'checkbox', checked:'checked' }
-      %label.block-label
-        Wednesday
-        %input{ type:'checkbox', checked:'checked' }
-      %label.block-label
-        Thursday
-        %input{ type:'checkbox', checked:'checked' }
-      %label.block-label
-        Friday
-        %input{ type:'checkbox', checked:'checked' }
-      %label.block-label
-        Saturday
-        %input{ type:'checkbox' }
-      %label.block-label
-        Sunday
-        %input{ type:'checkbox' }
+    %legend.heading-medium Which days of the week do you normally work?
+    /.inline
+    %label.block-label
+      Monday
+      %input{ type:'checkbox', checked:'checked' }
+    %label.block-label
+      Tuesday
+      %input{ type:'checkbox', checked:'checked' }
+    %label.block-label
+      Wednesday
+      %input{ type:'checkbox', checked:'checked' }
+    %label.block-label
+      Thursday
+      %input{ type:'checkbox', checked:'checked' }
+    %label.block-label
+      Friday
+      %input{ type:'checkbox', checked:'checked' }
+    %label.block-label
+      Saturday
+      %input{ type:'checkbox' }
+    %label.block-label
+      Sunday
+      %input{ type:'checkbox' }
 
   %fieldset
-    %legend.heading-large Skills and expertise
+    %legend.visuallyhidden Further information about you
     .form-group
-      %label.form-label Add tags to your profile to show your specific skills or expertise
-      %textarea
-
-  %fieldset
-    %legend.heading-large More details
+      %label.form-label-bold
+        Your skills and expertise
+        .form-hint Add tags to show your specific skills or expertise
+      / Just use the Select2 for the time being?
+      %input.form-control{ type:'text' }
     .form-group
-      %label.form-label Add any other information, e.g. “I am based at Bristol County Court on Wednesdays”
+      %label.form-label-bold
+        Any other information
+        .form-hint For example, “I am based at Bristol County Court on Wednesdays”
       %textarea.form-control{ rows:'8' }
 
   %fieldset
-    %legend.heading-large Photograph
-    %label.form-label Add or replace a photograph by clicking 'Choose file'. Please make sure the photo is no more than 3MB in size.
-    %input{ type:'file' }
+    %legend.heading-medium Your photograph
     .mugshot
-      %img{ alt:'', src:'https://people-finder.dsd.io/assets/medium_no_photo-d5fdf6edbd556dd3572c1719bfb0d88f.png' }
+      %img.preview{ alt:'', src:'https://people-finder.dsd.io/assets/medium_no_photo-d5fdf6edbd556dd3572c1719bfb0d88f.png' }
+    .form-group
+      %label.form-label
+        Add or replace your photograph
+        .form-hint
+          Files should be no more than 3MB in size
+      %input.file{ type:'file' }
 
-  .form-group
-    %button.button Create person
-    %a{ href:'#' } Cancel
+  .form-button-group
+    %input.button{ type:'submit', value:'Create profile' }
+    %p
+      %a{ href:'#' } Cancel
 
 

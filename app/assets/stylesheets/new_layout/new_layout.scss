@@ -1,0 +1,61 @@
+// GOVUK frontend toolkit dependencies
+@import "colours";
+@import "measurements";
+@import "typography";
+
+.user-controls {
+  text-align: right;
+  padding: $gutter-half 0;
+  border-bottom: 1px solid $grey-2;
+
+  @include core-16;
+
+  .user-name {
+    padding-right: $gutter-half;
+    margin-right: $gutter-half;
+    border-right: 1px solid $grey-2;
+  }
+}
+
+// user photos
+
+// 1. Create / edit profile
+.mugshot {
+  margin-bottom: $gutter-half;
+
+  .preview {
+    display: block;
+    width: 200px;
+    border: 1px solid $grey-3;
+  } 
+}
+
+// further form styles
+
+.form-button-group {
+  margin: $gutter 0; 
+}
+
+input.file {
+  @include core-16;
+}
+
+// utility styles
+
+.collapse-top {
+  margin-top: 0;
+}
+
+.group {
+  @extend %clear-floats;
+}
+
+// dummy org browser area
+
+.dummy-org {
+  display: block;
+  margin-bottom: $gutter-half;
+  padding: $gutter;
+  text-align: center;
+  background-color: $grey-3;
+}
