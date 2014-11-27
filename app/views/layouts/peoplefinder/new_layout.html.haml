@@ -13,5 +13,6 @@
 
 - content_for :body_end do
   %script{ src:'//code.jquery.com/jquery-1.11.0.min.js' }
+  = javascript_include_tag "new_layout/new_layout.js"
 
 = render template: "layouts/govuk_template"
