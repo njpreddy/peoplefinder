@@ -11,4 +11,7 @@
   %main#page-container
     = yield
 
+- content_for :body_end do
+  %script{ src:'//code.jquery.com/jquery-1.11.0.min.js' }
+
 = render template: "layouts/govuk_template"
