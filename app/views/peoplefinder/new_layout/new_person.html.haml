@@ -46,22 +46,23 @@
         %summary Why can’t I find my team?
         .text If the team cannot be found you will need to add it first before you can assign a person to it. This can be done from the page the new team would be located within.
 
-    / a subsequent panel added
-    .panel-indent
-      .form-group
-        %label.form-label Role title
-        %input.form-control{ type:'text' }
-      .form-group
-        .label Team
-        .dummy-org DUMMY ORG BROWSER
-        %label.block-label
-          I am a leader of this team
-          %input{ type:'checkbox' }
-      %p
-        %a{ href:'#' } Delete this role
+    / a subsequent panel template
+    #duplicatePanelTemplate
+      .panel-indent
+        .form-group
+          %label.form-label Role title
+          %input.form-control{ type:'text' }
+        .form-group
+          .label Team
+          .dummy-org DUMMY ORG BROWSER
+          %label.block-label
+            I am a leader of this team
+            %input{ type:'checkbox' }
+        %p
+          %a.remove-parent-panel{ href:'#' } Delete this role
 
     .form-group
-      %a{ href:'#' } Add another role
+      %a#duplicatePanelControl{ href:'#' } Add another role
 
   %fieldset
     %legend.visuallyhidden Your location
