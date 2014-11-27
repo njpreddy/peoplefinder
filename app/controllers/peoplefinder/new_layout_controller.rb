@@ -4,5 +4,8 @@ module Peoplefinder
     def test
 
     end
+    def new_person
+
+    end
   end
 end
