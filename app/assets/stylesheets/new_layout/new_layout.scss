@@ -45,43 +45,108 @@
 
 // Search module
 .search-module {
+  @extend %contain-floats;
   position: relative;
-  padding: $gutter-half;
-  background-color: $grey-4;
-  border-bottom: 1px solid $grey-3;
+  border-left: 1px solid $grey-3;
 
-  form {
-    @extend %contain-floats;
+  @include media(tablet) {
+    border: $gutter-half solid $grey-4;
   }
 
   .search-label {
-    @include media(tablet) {
-      float: left;
-      line-height: 40px;
-      margin-right: $gutter-half;
+    float: left;
+    height: 35px;
+    line-height: 35px;
+    text-indent: 15px;
+    overflow: hidden;
+    display: block;
+    margin-right: 10px;
+
+    .js-enabled & {
+      float: none;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      z-index: 1;
+      width: 100%;
+      margin-right: 0;
     }
   }
 
-  .search-control {
-    width: 100%;
+  input {
     @include box-sizing(border-box);
-    padding: 4px;
-    background-color: $white;
-    border: 1px solid $border-colour;
+    float: left;
+    width: 50%;
+    min-width: 0;
+    display: block;
+    margin: 0;
+    border: 0;
+    height: 35px;
+    padding: 6px 0;
+    @include ie-lte(7) {
+      height: 23px;
+    }
+    @include appearance(none);
+  }
 
-    // Disable webkit appearance and remove rounded corners
-    -webkit-appearance: none;
-    border-radius: 0;
+  input.search-control {
+    @include core-16($line-height: (23/16), $line-height-640: (23/13));
+    position: relative;
+    padding: 6px;
+    z-index: 3;
+    background: transparent;
 
-    @include media(tablet) {
-      float: left;
-      width: 50%;
-      margin: 0 $gutter-half 0 0;
+    &.focus,
+    &:focus {
+      background: $white;
+    }
+
+    @include ie-lte(7) {
+      padding-left: 0;
+    }
+    .js-enabled & {
+      width: 86%;
+      @include calc(width, "100% - 37px");
     }
   }
-  .search-button {
-    @include media(tablet) {
-      float: left;
+
+  input.search-button {
+    position: absolute;
+    z-index: 4;
+    right: 0;
+    top: 0;
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid $mainstream-brand;
+    border-width: 0 0 0 1px;
+    @include ie-lte(7) {
+      border-width: 1px;
+    }
+    border-left-color: #222;
+    @include border-radius(0);
+
+    overflow: hidden;
+    text-indent: -5000px;
+
+    color: $white;
+    background-color: $mainstream-brand;
+    background-image: url(https://assets.digital.cabinet-office.gov.uk/static/search-button-048408a3a13576148143172ebe3f2ed9.png);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+
+    @include device-pixel-ratio() {
+      background-size: 52.5px 35px;
+      background-position: 100% 50%;
+    }
+
+    @include ie-lte(7) {
+      background-image: none;
+      width: auto;
+    }
+
+    &:hover {
+      background-color: darken($mainstream-brand, 5%);
     }
   }
 }
@@ -89,6 +154,7 @@
 // global breadcumbs
 .breadcrumbs {
   padding: $gutter-half 0;
+  border-top: 1px solid $grey-3;
 
   @include core-16;
 
