@@ -17,7 +17,8 @@ $(function() {
     e.preventDefault();
     $this = $(this);
     var $newPanel = $($('#duplicatePanelTemplate').html());
-    $newPanel.insertBefore($this);
+    $newPanel.insertBefore($this.parent());
+    $newPanel.find('input').first().focus();
   });
 
   $('.roles').on('click', '.remove-parent-panel', function(e) {
