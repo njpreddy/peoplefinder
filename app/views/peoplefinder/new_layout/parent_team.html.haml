@@ -1,8 +1,17 @@
 .user-controls
-  %span.user-name
+  %span.user-details
     Signed in as Mat Johnson
-  %a{ href:'#' }
+  %a.sign-out{ href:'#' }
     Sign out
+  %a.add-person{ href:'#' }
+    Add another person
+
+.search-module
+  %form{ action:'#', method:'get' }
+    %label.search-label{ for:'query' }
+      Search by name or job title
+    %input.search-control{ type:'text', id:'query', name:'query' }
+    %input.button.search-button{ type:'submit', value:'Search' }
 
 %nav.breadcrumbs
   %ol
@@ -12,3 +21,82 @@
     %li
       %span
         Parent team
+
+.title-with-control
+  %h1.heading-xlarge
+    Ministry of Justice
+  %span.edit-controls
+    %a{ href:'#' } Edit this team
+
+.grid-row
+  .column-two-thirds
+    %h2.visuallyhidden About Ministry of Justice
+    .text
+      %p
+        We are one of the largest government departments, employing around 76,000 people (including those in the Probation Service), with a budget of approximately £9 billion. Each year, millions of people use our services across the UK - including at 500 courts and tribunals, and 133 prisons in England and Wales. We work with many other government agencies, including:
+      %ul.list-bullet
+        %li HM Courts and Tribunals Service
+        %li HM Prison Service
+        %li Probation Service
+        %li National Offender Management Service (NOMS)
+        %li Legal Aid Agency
+        %li Youth Justice Board
+
+    %h2.heading-large Our responsibilities
+    .text
+      %p
+        The legal system must uphold fairness in society: both in business and for individuals. We want to ensure justice for victims of crime and better rehabilitation for criminals, with a reduction in the rate of reoffending. The justice system must punish the guilty, protect our liberties and rehabilitate offenders. We will ensure that more criminals make amends to victims and communities for the harm they have caused and help them break the destructive cycle of crime.
+
+    %p
+      %a.heading-small{ href:'#' } View all people in Ministry of Justice
+
+  .column-third
+    %h2.visuallyhidden Team leader
+    %figure.mugshot
+      %img{ alt:'', src:'https://people-finder-production.s3.amazonaws.com/uploads/peoplefinder/person/image/108/medium_800px-Ursula_Brennan.jpg' }
+      %figcaption
+        .mugshot-name Ursuala Brennan
+        .mugshot-role Permanent Secretary
+
+.title-with-control
+  %h3.heading-large
+    Teams within Ministry of Justice
+  %span.edit-controls
+    %a{ href:'#' } Add a new team to Ministry of Justice
+
+.grid-row
+  .column-third
+    %a.block-link{ href:'#' }
+      %h4.heading-small.block-link-feedback Corporate Services
+      %p
+        As corporate services we have a key role in enabling staff in the MoJ to be able to do their job &mdash; through estates, technology, digital services, HR and shared services.
+  .column-third
+    %a.block-link{ href:'#' }
+      %h4.heading-small.block-link-feedback Criminal Justice Group
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque augue nunc, semper a ante ac, vehicula fermentum sem.
+  .column-third
+    %a.block-link{ href:'#' }
+      %h4.heading-small.block-link-feedback Finance
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque augue nunc, semper a ante ac, vehicula fermentum sem.
+
+.grid-row
+  .column-third
+    %a.block-link{ href:'#' }
+      %h4.heading-small.block-link-feedback Her Majesty's Courts and Tribunals Services
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque augue nunc, semper a ante ac, vehicula fermentum sem.
+  .column-third
+    %a.block-link{ href:'#' }
+      %h4.heading-small.block-link-feedback Judicial Appointments Committee
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque augue nunc, semper a ante ac, vehicula fermentum sem.
+  .column-third
+    %a.block-link{ href:'#' }
+      %h4.heading-small.block-link-feedback Law and Access to Justive
+      %p
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque augue nunc, semper a ante ac, vehicula fermentum sem.
+
+.page-metadata
+  %small Last updated by Some One on 28 November 2014
