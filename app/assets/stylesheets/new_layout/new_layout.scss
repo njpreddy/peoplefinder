@@ -1,4 +1,6 @@
 // GOVUK frontend toolkit dependencies
+@import "shims";
+@import "css3";
 @import "colours";
 @import "measurements";
 @import "typography";
@@ -7,23 +9,86 @@
 
 // Logged in user name, log out control
 .user-controls {
-  text-align: right;
   padding: $gutter-half 0;
-  border-bottom: 1px solid $grey-2;
+  border-bottom: 1px solid $grey-3;
 
   @include core-16;
 
-  .user-name {
-    padding-right: $gutter-half;
-    margin-right: $gutter-half;
-    border-right: 1px solid $grey-2;
+  @include media(tablet) {
+    text-align: right;
+  }
+
+  .user-details {
+    display: block;
+
+    @include media(tablet) {
+      display: inline;
+    }
+  }
+
+  .user-details,
+  .sign-out {
+    @include media(tablet) {
+      padding-right: $gutter-half;
+      margin-right: $gutter-half;
+      border-right: 1px solid $grey-2;
+    }
+  }
+
+  .add-person {
+    margin-left: $gutter-half;
+    @include media(tablet) {
+      margin-left: 0;
+    }
+  }
+}
+
+// Search module
+.search-module {
+  position: relative;
+  padding: $gutter-half;
+  background-color: $grey-4;
+  border-bottom: 1px solid $grey-3;
+
+  form {
+    @extend %contain-floats;
+  }
+
+  .search-label {
+    @include media(tablet) {
+      float: left;
+      line-height: 40px;
+      margin-right: $gutter-half;
+    }
+  }
+
+  .search-control {
+    width: 100%;
+    @include box-sizing(border-box);
+    padding: 4px;
+    background-color: $white;
+    border: 1px solid $border-colour;
+
+    // Disable webkit appearance and remove rounded corners
+    -webkit-appearance: none;
+    border-radius: 0;
+
+    @include media(tablet) {
+      float: left;
+      width: 50%;
+      margin: 0 $gutter-half 0 0;
+    }
+  }
+  .search-button {
+    @include media(tablet) {
+      float: left;
+    }
   }
 }
 
 // global breadcumbs
 .breadcrumbs {
   padding: $gutter-half 0;
-  border-bottom: 1px solid $grey-2;
 
   @include core-16;
 
@@ -50,16 +115,68 @@
   }
 }
 
+// Title with a control alongside. i.e. "Team name ... edit this team"
+.title-with-control {
+  @extend %contain-floats;
+
+  h1, h2, h3, h4, h5, h6 {
+    display: inline-block;
+    margin-right: $gutter-half;
+  }
+
+  .edit-controls {
+    white-space: nowrap;
+
+    @include core-16;
+  }
+}
+
+// Block link (<a> tag wrapped around large multi-element blocks of content)
+a.block-link {
+  text-decoration: none;
+  outline: none;
+  color: $black;
+  
+  .block-link-feedback {
+    color: $link-colour;
+    text-decoration: underline;
+  }
+
+  &:focus .block-link-feedback {
+    outline: 3px solid $yellow;
+    background-color: $yellow;
+  }
+  &:active .block-link-feedback {
+    color: $link-active-colour;
+  }
+  &:hover .block-link-feedback {
+    color: $link-hover-colour;
+  }
+  &:visited .block-link-feedback {
+    color: $link-visited-colour;
+  }
+}
+
+// Page metadata - i.e. "last updated on"
+.page-metadata {
+  margin-top: $gutter;
+
+  @include core-16;
+}
+
 // user photos //////////////////////////////
-// 1. Create / edit profile
 
 .mugshot {
-  margin-bottom: $gutter-half;
-  .preview {
+  margin-bottom: $gutter;
+  img {
     display: block;
     width: 200px;
     border: 1px solid $grey-3;
-  } 
+  }
+  .mugshot-name {
+    margin-top: $gutter-half;
+    font-weight: bold;
+  }
 }
 
 // additional form styles //////////////////////////////
@@ -74,12 +191,15 @@ input.file {
 
 // utility styles //////////////////////////////
 
+.collapse {
+  margin: 0;
+}
 .collapse-top {
   margin-top: 0;
 }
 
 .group {
-  @extend %clear-floats;
+  @extend %contain-floats;
 }
 
 // dummy org browser area //////////////////////////////
