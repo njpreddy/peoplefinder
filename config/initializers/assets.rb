@@ -12,7 +12,6 @@ Rails.application.config.assets.precompile += %w[
   gov-static/gov-print.css
   moj-base.css
   new_layout.css
-  new_layout.js
   gov-static/gov-ie.js
   jquery.Jcrop.min.css
   jquery.Jcrop.min.js
