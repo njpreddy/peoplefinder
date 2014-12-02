@@ -34,5 +34,6 @@ Peoplefinder::Engine.routes.draw do
 
   get '/test', to: 'new_layout#test'
   get '/new-person', to: 'new_layout#new_person'
+  get '/person', to: 'new_layout#person'
   get '/parent-team', to: 'new_layout#parent_team'
 end

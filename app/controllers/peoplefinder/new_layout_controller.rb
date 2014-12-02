@@ -7,6 +7,9 @@ module Peoplefinder
     def new_person
 
     end
+    def person
+
+    end
     def parent_team
 
     end

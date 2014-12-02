@@ -57,10 +57,10 @@
     float: left;
     height: 35px;
     line-height: 35px;
-    text-indent: 15px;
+    text-indent: $gutter-half;
     overflow: hidden;
     display: block;
-    margin-right: 10px;
+    margin-right: $gutter-half;
 
     .js-enabled & {
       float: none;
@@ -83,9 +83,6 @@
     border: 0;
     height: 35px;
     padding: 6px 0;
-    @include ie-lte(7) {
-      height: 23px;
-    }
     @include appearance(none);
   }
 
@@ -93,16 +90,12 @@
     @include core-16($line-height: (23/16), $line-height-640: (23/13));
     position: relative;
     padding: 6px;
-    z-index: 3;
+    z-index: 2;
     background: transparent;
 
     &.focus,
     &:focus {
       background: $white;
-    }
-
-    @include ie-lte(7) {
-      padding-left: 0;
     }
     .js-enabled & {
       width: 86%;
@@ -112,7 +105,7 @@
 
   input.search-button {
     position: absolute;
-    z-index: 4;
+    z-index: 3;
     right: 0;
     top: 0;
     width: 35px;
@@ -127,7 +120,7 @@
     @include border-radius(0);
 
     overflow: hidden;
-    text-indent: -5000px;
+    text-indent: -999em;
 
     color: $white;
     background-color: $mainstream-brand;
@@ -225,9 +218,10 @@ a.block-link {
 
 // Page metadata - i.e. "last updated on"
 .page-metadata {
-  margin-top: $gutter;
-
   @include core-16;
+  margin-top: $gutter;
+  text-align: right;
+  color: $grey-1;
 }
 
 // user photos //////////////////////////////
@@ -236,8 +230,12 @@ a.block-link {
   margin-bottom: $gutter;
   img {
     display: block;
-    width: 200px;
+    max-width: 100%;
     border: 1px solid $grey-3;
+
+    fieldset & {
+      width: 200px;
+    }
   }
   .mugshot-name {
     margin-top: $gutter-half;

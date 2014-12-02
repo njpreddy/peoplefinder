@@ -1,0 +1,62 @@
+.user-controls
+  %span.user-details
+    Signed in as Mat Johnson
+  %a.sign-out{ href:'#' }
+    Sign out
+  %a.add-person{ href:'#' }
+    Add another person
+
+.search-module
+  %form{ action:'#', method:'get' }
+    %label.search-label{ for:'query' }
+      Search by name or job title
+    %input.search-control{ type:'text', id:'query', name:'query' }
+    %input.search-button{ type:'submit', value:'Search' }
+
+%nav.breadcrumbs
+  %ol
+    %li
+      %a{ href:'#' }
+        Home
+    %li
+      %a{ href:'#' }
+        Search results
+    %li
+      %span
+        Mat Johnson
+
+.title-with-control
+  %h1.heading-xlarge
+    Mat Johnson
+  %span.edit-controls
+    %a{ href:'#' } Edit this profile
+
+.grid-row
+  .column-two-thirds
+    %h2.person-role Role #1 title
+    .person-team department
+
+    %h2.person-role Role #2 title
+    .person-team department
+
+    %h3.heading-large Location
+    %p 6th floor, Aviation House
+
+    %h3.heading-large Email
+    %p
+      %a{ href:'mailto:name.surname@digital.somewhere.gov.uk' }name.surname@digital.somewhere.gov.uk
+
+    %h3.heading-large Telephone
+    %p 0000 000 000
+    %p 0000 000 000
+
+    %h3.heading-large Location
+    %p 6th floor, Aviation House
+
+  .column-third
+    %figure.mugshot
+      %img{ alt:'', src:'https://people-finder.dsd.io/assets/medium_no_photo-d5fdf6edbd556dd3572c1719bfb0d88f.png' }
+
+
+.page-metadata
+  %small Last updated by Some One on 28 November 2014
